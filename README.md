@@ -51,3 +51,6 @@ Name  | Description |
 
 Ahlfeldt, Barr (2022): The Economics Skyscrapers: A synthesis. Journal of Urban Economics, 129. https://doi.org/10.1016/j.jue.2021.103419
 
+**Acknowledgement**: 
+
+I thank Immanuel Feld for spotting a bug in the code that was addressed in version 0.94.
