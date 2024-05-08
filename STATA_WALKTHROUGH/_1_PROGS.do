@@ -101,14 +101,14 @@ program SOLVER // Start defineing SOLVER program
 		qui replace a_x_R = A_tilde_x_R^(1/(1-alpha_R))*y^(1/(1-alpha_R))		// Residential floor space shifter
 
 	// Land rent according to Eq. (7)
-		qui replace r_x_C = a_x_C / (1+omega_C)*(a_x_C / (c_C*(1+omega_C)))^((1+omega_C)/(theta_C-omega_C))-c_C*(a_x_C/(c_C*(1+theta_C)))^((1+theta_C)/(theta_C-omega_C))
-		qui replace r_x_R = a_x_R / (1+omega_R)*(a_x_R / (c_R*(1+omega_R)))^((1+omega_R)/(theta_R-omega_R))-c_R*(a_x_R/(c_R*(1+theta_R)))^((1+theta_R)/(theta_R-omega_R))	
+		qui replace r_x_C = a_x_C / (1+omega_C)*(a_x_C / (c_C*(1+theta_C)))^((1+omega_C)/(theta_C-omega_C))-c_C*(a_x_C/(c_C*(1+theta_C)))^((1+theta_C)/(theta_C-omega_C))
+		qui replace r_x_R = a_x_R / (1+omega_R)*(a_x_R / (c_R*(1+theta_R)))^((1+omega_R)/(theta_R-omega_R))-c_R*(a_x_R/(c_R*(1+theta_R)))^((1+theta_R)/(theta_R-omega_R))	
 		
 	// Define land use
 		qui replace U = . 														// Clear any pre-existing value
 		qui replace U = 3 if r_a > r_x_C & r_a > r_x_R							// Agrictultural land rent is highest
-		qui replace U = 2 if r_x_R  > r_x_C & r_x_R > r_a						// Residential land rent is highest
-		qui replace U = 1 if r_x_C > r_x_R & r_x_C > r_a						// Commercial land rent is highest
+		qui replace U = 2 if r_x_R  > r_x_C & r_x_R > r_a						// Commercial land rent is highest
+		qui replace U = 1 if r_x_C > r_x_R & r_x_C > r_a						// Residential land rent is highest
 	
 	// Outer edge of residential zone	
 		qui sum x if U == 3 &  x >= 0 											// Take the inner margin of the agricultural zone
@@ -174,7 +174,7 @@ program define WAGE
 				scalar y_factor = 1.2
 			}
 				else {
-					if L_hat_demand == 0 { // If no labour demand decrease wage by 20%
+					if L_hat_demand == 0 { // If no labour demand decrease wage by 10%
 						scalar y_factor = 0.8
 					}
 				else {
