@@ -1,6 +1,4 @@
-**The economics of skyscrapers: A synthesis**
-
-**Toolkit**
+**Toolkit for The Economics of Skyscrapers: A Synthesis**
 
 (c) Gabriel M. Ahlfeldt
 
