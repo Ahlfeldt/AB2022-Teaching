@@ -10,6 +10,8 @@ This toolkit complements the article by Ahlfeldt & Barr (2022), published in the
 
 When using this toolkit in your work, please cite Ahlfeldt & Barr (2022).
 
+This toolkit has been developed as core component of the course [Quantitative Spatial Economics](https://sites.google.com/view/bqse/bqse-teaching) taught by Gabriel Ahlfeldt to research students at the Berlin School of Economics and Humboldt University. The course is taught in the German summer term and is open to visiting PhD students.
+
 **Folders**
 
 Name | Description |
